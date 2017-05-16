@@ -28,3 +28,5 @@ Suorita API-testit komennolla lab projektin juuressa.
 [Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 
 [hapi.js](https://hapijs.com/)
+
+[Travis CI with Node.js](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
