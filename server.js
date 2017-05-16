@@ -15,6 +15,21 @@ server.route({
     }
 });
 
+
+server.route({
+    method: 'GET',
+    path: '/observations/{year}',
+    handler: function (request, reply) {
+        reply('[{name: "Kangaskiuru", year: ' + encodeURIComponent(request.params.year) +
+              ', location: {lat: 23.34322, lng: 32.3456}}]');
+    },
+    config: {
+      description: 'Get list of observations by given year',
+      notes: 'The year parameter defaults to current year if not specified',
+      tags: ['api', 'observation listing']
+    }
+});
+
 server.route({
     method: 'GET',
     path: '/{name}',
