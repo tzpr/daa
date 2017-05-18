@@ -8,10 +8,12 @@ Noden päällä pyörivä palvelinsovellus lintuhavaintojen tallentamiseen.
 
 [Tuntikirjanpito](https://docs.google.com/spreadsheets/d/1NBLY_1rivcEe-nJNlVcYG_qPZA2MytAvqKgr4fHQSiY/edit?usp=sharing)
 
-
+Sovellus Herokussa: http://havis-node.herokuapp.com/
 
 ### Asennus
-Kloonaa projekti omalle koneelle. Mene havis-hakemistoon ja suorita komento npm install.
+Kloonaa projekti omalle koneelle. 
+
+Mene havis-hakemistoon ja suorita komento npm install.
 
 Käynnistä solvellus komennolla npm start.
 
@@ -20,7 +22,7 @@ Käynnistä solvellus komennolla npm start.
 
 [code, BDD Assertion library](https://github.com/hapijs/code)
 
-Suorita API-testit komennolla lab projektin juuressa.
+Suorita API-testit komennolla npm test projektin juuressa.
 
 
 
