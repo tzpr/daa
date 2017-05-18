@@ -11,24 +11,26 @@ Noden päällä pyörivä palvelinsovellus lintuhavaintojen tallentamiseen.
 Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 ### Asennus
-Kloonaa projekti omalle koneelle. 
+1. Kloonaa projekti omalle koneelle. 
 
-Mene havis-hakemistoon ja suorita komento npm install.
+2. Mene havis-hakemistoon ja suorita komento npm install.
 
-Käynnistä solvellus komennolla npm start.
+3. Käynnistä solvellus komennolla npm start.
 
 ### Testit
-[lab, Node.js test framework](https://github.com/hapijs/lab)
+- [lab, Node.js test framework](https://github.com/hapijs/lab)
 
-[code, BDD Assertion library](https://github.com/hapijs/code)
+- [code, BDD Assertion library](https://github.com/hapijs/code)
 
 Suorita API-testit komennolla npm test projektin juuressa.
 
 
 
 ### Links
-[Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+- [Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 
-[hapi.js](https://hapijs.com/)
+- [hapi.js](https://hapijs.com/)
 
-[Travis CI with Node.js](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
+- [Travis CI with Node.js](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
+
+- https://github.com/dwyl/learn-api-design
