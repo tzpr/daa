@@ -1,2 +1,9 @@
 language: node_js
-node_js: "6"
+node_js: '6'
+deploy:
+  provider: heroku
+  api_key:
+    secure: jLhVEYh4ObiS4r6lN2yaTfcGAhBaMqL9BAzn8WffFT6B/L6HIKFgcRvg8UVHMBNYmk7ufBI5gRwKK+loLuGdgg0M/5OOoGgTU/hFofciP47gzkRC0NK4BcI3nuO/aGmC1HpTIAg7z1OCvqkTMEhGSwWs4BYNlM1m4/4IZUU2TI8DwBz/T3jlWDrb4YC3kiphqJl5h7tWVIZeSwBB1PX+sPc5lagxJVqxAujvjHgV5iLNrnb3dhTsPbTuoNI1ttrlGHeg1n8I1bMXB6/OP+Oy+8LCmo3RNjGID/ampRS2JEOapQRcQS51ZjJ/nvZZCEtEPmNw6zQOZl6WV7WqRx/xixfG9MYbnVPaVoF47XAJWZzR5g8KuNzyeOk0DRD8v+9rvNGnmd+LMd/WUuyRauJwJfdCSENJv1k4OItyvr1nIunfuYsrXUrDHBlPYL7nqLA7lyCOW6gCCND6GouXOsbv20Nr5vsi0ixOA7ONfM1tuXaqT7+Erukpss3r+AjXy0xWtUREepwV03Pm+/D8JTxbQUxAqk09b6t5KDBW+sGWCzX8EUsf3X6N3wnZL0NjDNYxqOBcMQLqvrvD29RebJAfCvyMMMmiWHhXIYUUjECRqrHuVmUeKleXeaWOq8Wy2W1exY6hmxrv7Jq1QBXrroTzci/DUPiAun500eBOAolIkCM=
+  app: havis-node
+  on:
+    repo: tzpr/havis
