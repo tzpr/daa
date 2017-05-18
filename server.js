@@ -5,7 +5,8 @@ const Good = require('good');
 
 
 const server = new Hapi.Server();
-server.connection({ port: 3000, host: 'localhost' });
+server.connection({ port: (process.env.PORT || 5000), host: 'localhost' });
+
 
 server.route({
     method: 'GET',
