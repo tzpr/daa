@@ -34,3 +34,5 @@ Suorita API-testit komennolla npm test projektin juuressa.
 - [Travis CI with Node.js](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
 
 - https://github.com/dwyl/learn-api-design
+
+- validation [joi](https://github.com/hapijs/joi)
