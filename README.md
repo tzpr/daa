@@ -25,6 +25,12 @@ Sovellus Herokussa: https://havis-node.herokuapp.com/
 Suorita API-testit komennolla npm test projektin juuressa.
 
 
+### Esimerkkikäyttötapauksia [Curl](https://curl.haxx.se/)-kutsuina
+
+- GET-pyyntö /observations/{year} polkuun palauttaa parametrina annetun vuoden havainnot JSON-muodossa.
+```
+curl https://havis-node.herokuapp.com/observations/2017
+```
 
 ### Links
 - web framework: [hapi.js](https://hapijs.com/)
