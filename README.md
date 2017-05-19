@@ -39,6 +39,8 @@ curl https://havis-node.herokuapp.com/observations/2017
 
 - CI tool: [Travis CI with Node.js](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
 
+- Tietokanta ORM: https://www.npmjs.com/package/mongoose
+
 - [Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 
 - https://github.com/dwyl/learn-api-design
