@@ -27,12 +27,12 @@ Suorita API-testit komennolla npm test projektin juuressa.
 
 
 ### Links
+- web framework: [hapi.js](https://hapijs.com/)
+
+- validation: [joi](https://github.com/hapijs/joi)
+
+- CI tool: [Travis CI with Node.js](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
+
 - [Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 
-- [hapi.js](https://hapijs.com/)
-
-- [Travis CI with Node.js](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
-
 - https://github.com/dwyl/learn-api-design
-
-- validation [joi](https://github.com/hapijs/joi)
