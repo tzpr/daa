@@ -1,4 +1,4 @@
-const Code = require('code');   // assertion library
+const Code = require('code'); // assertion library
 const Lab = require('lab');
 const lab = exports.lab = Lab.script();
 
@@ -23,22 +23,74 @@ describe('just dummy test testing', () => {
 describe('api GET requests', () => {
 
     const responseData =
-          '[{name: "Kangaskiuru", year: 2017, location: {lat: 23.34322, lng: 32.3456}}]'
+        '[{name: "Kangaskiuru", year: 2017, location: {lat: 23.34322, lng: 32.3456}}]'
 
 
     it('returns observations by the given year', (done) => {
 
         const year = 2017;
-		    const options = {
-			      method: "GET",
-			      url: "/observations/" + year
-		    };
+        const options = {
+            method: "GET",
+            url: "/observations/" + year
+        };
 
-		    // server.inject lets you simulate an http request
-		    server.inject(options, function(response) {
-		  	    expect(response.statusCode).to.equal(200);
-			      expect(response.result).to.equal(responseData);
-			      server.stop(done);  // done() callback is required to end the test.
-		    });
-	  });
+        // server.inject lets you simulate an http request
+        server.inject(options, function(response) {
+            expect(response.statusCode).to.equal(200);
+            expect(response.result).to.equal(responseData);
+            server.stop(done); // done() callback is required to end the test.
+        });
+    });
+
+    it('returns validation error if too short year parameter is used', (done) => {
+        const year = 96;
+        const options = {
+            method: "GET",
+            url: "/observations/" + year
+        };
+
+        server.inject(options, function(response) {
+            expect(response.statusCode).to.equal(400);
+            server.stop(done);
+        });
+    });
+
+    it('returns validation error if too small year parameter value is used', (done) => {
+        const year = 1999;
+        const options = {
+            method: "GET",
+            url: "/observations/" + year
+        };
+
+        server.inject(options, function(response) {
+            expect(response.statusCode).to.equal(400);
+            server.stop(done);
+        });
+    });
+
+    it('returns validation error if too big year parameter value is used', (done) => {
+        const year = 2021;
+        const options = {
+            method: "GET",
+            url: "/observations/" + year
+        };
+
+        server.inject(options, function(response) {
+            expect(response.statusCode).to.equal(400);
+            server.stop(done);
+        });
+    });
+
+    it('returns validation error if non numeric year parameter is used', (done) => {
+        const year = 'daad';
+        const options = {
+            method: "GET",
+            url: "/observations/" + year
+        };
+
+        server.inject(options, function(response) {
+            expect(response.statusCode).to.equal(400);
+            server.stop(done);
+        });
+    });
 });

@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi');
 const Good = require('good');
+const Joi  = require('joi');
 
 
 const server = new Hapi.Server();
@@ -25,9 +26,14 @@ server.route({
               ', location: {lat: 23.34322, lng: 32.3456}}]');
     },
     config: {
-      description: 'Get list of observations by given year',
-      notes: 'The year parameter defaults to current year if not specified',
-      tags: ['api', 'observation listing']
+        validate: {
+            params: {
+                year: Joi.number().integer().min(2015).max(2020).required()
+            }
+        },
+        description: 'Get list of observations by given year',
+        notes: 'The year parameter defaults to current year if not specified',
+        tags: ['api', 'observation listing']
     }
 });
 
