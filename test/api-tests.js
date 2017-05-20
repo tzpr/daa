@@ -22,10 +22,6 @@ describe('just dummy test testing', () => {
 
 describe('api GET requests', () => {
 
-    const responseData =
-        '[{name: "Kangaskiuru", year: 2017, location: {lat: 23.34322, lng: 32.3456}}]'
-
-
     it('returns observations by the given year', (done) => {
 
         const year = 2017;
@@ -37,7 +33,7 @@ describe('api GET requests', () => {
         // server.inject lets you simulate an http request
         server.inject(options, function(response) {
             expect(response.statusCode).to.equal(200);
-            expect(response.result).to.equal(responseData);
+            expect(response.result.name).to.equal('Harakka');
             server.stop(done); // done() callback is required to end the test.
         });
     });
