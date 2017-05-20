@@ -8,11 +8,15 @@ const Vision = require('vision');
 const Mongoose = require('mongoose');
 const Swagger = require('hapi-swagger');
 const server = new Hapi.Server();
+const Observation = require('./models/observation').Observation;
+const config = require('./config');
 
 server.connection({
-    port: (process.env.PORT || 3000),
-    host: '0.0.0.0'
+    port: (process.env.PORT || config.server.port),
+    host: config.server.host
 });
+
+
 
 server.route({
     method: 'GET',

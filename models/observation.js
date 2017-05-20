@@ -9,4 +9,8 @@ var ObservationSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Observation', ObservationSchema);
+var observation = mongoose.model('Observation', ObservationSchema);
+
+module.exports = {
+    Observation: observation
+};
