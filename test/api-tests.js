@@ -20,6 +20,28 @@ describe('just dummy test testing', () => {
 });
 
 
+
+describe('api POST requests', () => {
+
+    it('saves observation', (done) => {
+    
+        const options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                name: 'Räyskä',
+                year: 2017
+            }
+        };
+
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(201);
+            done();
+        });
+    });
+});
+
+
 describe('api GET requests', () => {
 
     it('returns observations by the given year', (done) => {
@@ -27,7 +49,7 @@ describe('api GET requests', () => {
         const year = 2017;
         const options = {
             method: "GET",
-            url: "/observations/" + year
+            url: "/observation/" + year
         };
 
         // server.inject lets you simulate an http request
@@ -42,7 +64,7 @@ describe('api GET requests', () => {
         const year = 96;
         const options = {
             method: "GET",
-            url: "/observations/" + year
+            url: "/observation/" + year
         };
 
         server.inject(options, function(response) {
@@ -55,7 +77,7 @@ describe('api GET requests', () => {
         const year = 1999;
         const options = {
             method: "GET",
-            url: "/observations/" + year
+            url: "/observation/" + year
         };
 
         server.inject(options, function(response) {
@@ -68,7 +90,7 @@ describe('api GET requests', () => {
         const year = 2021;
         const options = {
             method: "GET",
-            url: "/observations/" + year
+            url: "/observation/" + year
         };
 
         server.inject(options, function(response) {
@@ -81,7 +103,7 @@ describe('api GET requests', () => {
         const year = 'daad';
         const options = {
             method: "GET",
-            url: "/observations/" + year
+            url: "/observation/" + year
         };
 
         server.inject(options, function(response) {

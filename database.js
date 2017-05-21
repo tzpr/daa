@@ -2,8 +2,6 @@ const Mongoose = require('mongoose');
 const config = require('./config');
 
 
-console.log('DADAA. : ' + process.env.MONGO_URI);
-
 Mongoose.connect(process.env.MONGO_URI);
 
 const db = Mongoose.connection;

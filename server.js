@@ -51,7 +51,7 @@ server.route({
 
 server.route({
     method: 'GET',
-    path: '/observations/{year}',
+    path: '/observation/{year}',
     handler: function(request, reply) {
         Observation.findOne({
             'year': encodeURIComponent(request.params.year)
@@ -80,7 +80,7 @@ server.route({
 
 server.route({
     method: 'GET',
-    path: '/observation/{id}',
+    path: '/observation/id/{id}',
     handler: function(request, reply) {
         Observation.findOne({
             '_id': encodeURIComponent(request.params.id)
@@ -109,7 +109,7 @@ server.route({
 
 server.route({
     method: 'POST',
-    path: '/observation/',
+    path: '/observation',
     config: {
         validate: {
             payload: {
