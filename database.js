@@ -1,11 +1,10 @@
 const Mongoose = require('mongoose');
 const config = require('./config');
-const dbUri = config.mongoURI(process.env.NODE_ENV);
 
-console.log('DADAA. NODE_ENV: ' + process.env.NODE_ENV);
-console.log('DADAA. dbUri: ' + dbUri);
 
-Mongoose.connect(dbUri);
+console.log('DADAA. : ' + process.env.MONGO_URI);
+
+Mongoose.connect(process.env.MONGO_URI);
 
 const db = Mongoose.connection;
 
