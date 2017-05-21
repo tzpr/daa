@@ -2,6 +2,7 @@ const Mongoose = require('mongoose');
 const config = require('./config');
 const dbUri = config.mongoURI(process.env.NODE_ENV);
 
+console.log('DADAA. NODE_ENV: ' + process.env.NODE_EN);
 
 Mongoose.connect(dbUri);
 
