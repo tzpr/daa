@@ -24,7 +24,7 @@ describe('just dummy test testing', () => {
 describe('api POST requests', () => {
 
     it('saves observation', (done) => {
-    
+
         const options = {
             method: 'POST',
             url: '/observation',
@@ -55,7 +55,7 @@ describe('api GET requests', () => {
         // server.inject lets you simulate an http request
         server.inject(options, function(response) {
             expect(response.statusCode).to.equal(200);
-            expect(response.result.name).to.equal('Harakka');
+            expect(response.result.name).to.equal('Räyskä');
             server.stop(done); // done() callback is required to end the test.
         });
     });
