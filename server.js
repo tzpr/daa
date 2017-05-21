@@ -1,5 +1,8 @@
 'use strict';
 
+// load env variables from .env file
+require('dotenv').load();
+
 const Hapi = require('hapi');
 const Good = require('good');
 const Joi = require('joi');
