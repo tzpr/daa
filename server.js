@@ -5,7 +5,6 @@ require('dotenv').load();
 
 const Hapi = require('hapi');
 const Good = require('good');
-const Joi = require('joi');
 const Inert = require('inert');
 const Vision = require('vision');
 const Swagger = require('hapi-swagger');
@@ -52,13 +51,10 @@ server.register([
         }
     }
 ], (err) => {
-
     if (err) {
         throw err; // something bad happened loading the plugin
     }
-
     server.start((err) => {
-
         if (err) {
             throw err;
         }

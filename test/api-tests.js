@@ -49,7 +49,7 @@ describe('api GET requests', () => {
         const year = 2017;
         const options = {
             method: "GET",
-            url: "/observation/" + year
+            url: "/observation/" + year + "/year"
         };
 
         // server.inject lets you simulate an http request
@@ -64,7 +64,7 @@ describe('api GET requests', () => {
         const year = 96;
         const options = {
             method: "GET",
-            url: "/observation/" + year
+            url: "/observation/" + year + "/year"
         };
 
         server.inject(options, function(response) {
@@ -77,7 +77,7 @@ describe('api GET requests', () => {
         const year = 1999;
         const options = {
             method: "GET",
-            url: "/observation/" + year
+            url: "/observation/" + year + "/year"
         };
 
         server.inject(options, function(response) {
@@ -90,7 +90,7 @@ describe('api GET requests', () => {
         const year = 2021;
         const options = {
             method: "GET",
-            url: "/observation/" + year
+            url: "/observation/" + year + "/year"
         };
 
         server.inject(options, function(response) {
@@ -103,7 +103,7 @@ describe('api GET requests', () => {
         const year = 'daad';
         const options = {
             method: "GET",
-            url: "/observation/" + year
+            url: "/observation/" + year + "/year"
         };
 
         server.inject(options, function(response) {

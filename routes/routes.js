@@ -1,6 +1,6 @@
 const Observation = require('../models/observation').Observation;
 const Joi = require('joi');
-
+const Boom = require('boom');
 
 module.exports = [{
         method: 'GET',
@@ -11,24 +11,7 @@ module.exports = [{
     },
     {
         method: 'GET',
-        path: '/{name}',
-        handler: function(request, reply) {
-            reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
-        },
-        config: {
-            validate: {
-                params: {
-                    name: Joi.required()
-                }
-            },
-            description: 'Just testing, say hello!',
-            notes: 'Just for testing, passing name as a request param',
-            tags: ['api', 'hello']
-        }
-    },
-    {
-        method: 'GET',
-        path: '/observation/{year}',
+        path: '/observation/{year}/year',
         handler: function(request, reply) {
             Observation.findOne({
                 'year': encodeURIComponent(request.params.year)
@@ -56,7 +39,7 @@ module.exports = [{
     },
     {
         method: 'GET',
-        path: '/observation/id/{id}',
+        path: '/observation/{id}/id',
         handler: function(request, reply) {
             Observation.findOne({
                 '_id': encodeURIComponent(request.params.id)
