@@ -29,7 +29,7 @@ server.register([
         register: Swagger,
         options: {
             info: {
-                title: 'Test API Documentation'
+                title: 'API Documentation for havis REST API'
             }
         }
     },

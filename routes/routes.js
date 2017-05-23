@@ -13,18 +13,15 @@ module.exports = [{
         method: 'GET',
         path: '/observation/{year}/year',
         handler: function(request, reply) {
-            Observation.findOne({
+            Observation.find({
                 'year': encodeURIComponent(request.params.year)
-            }, function(err, obs) {
+            }, function(err, observation) {
                 if (!err) {
-                    reply(obs);
+                    reply(observation);
                 } else {
-                    reply(Boom.badImplementation(err)); // 500 error
+                    reply(Boom.badImplementation(err));
                 }
             });
-            //handler: function(request, reply) {
-            //    reply('[{name: "Kangaskiuru", year: ' + encodeURIComponent(request.params.year) +
-            //        ', location: {lat: 23.34322, lng: 32.3456}}]');
         },
         config: {
             validate: {
@@ -47,12 +44,9 @@ module.exports = [{
                 if (!err) {
                     reply(obs);
                 } else {
-                    reply(Boom.badImplementation(err)); // 500 error
+                    reply(Boom.badImplementation(err));
                 }
             });
-            //handler: function(request, reply) {
-            //    reply('[{name: "Kangaskiuru", year: ' + encodeURIComponent(request.params.year) +
-            //        ', location: {lat: 23.34322, lng: 32.3456}}]');
         },
         config: {
             validate: {
@@ -76,18 +70,22 @@ module.exports = [{
                 }
             },
             description: 'Save new observation to db',
-            notes: 'dadaa',
+            notes: 'Save new observation to db',
             tags: ['api', 'save observation']
         },
         handler: function(request, reply) {
             var observation = new Observation(request.payload);
             observation.save(function(err, user) {
                 if (!err) {
-                    reply(observation).created('/observation/' + observation._id); // HTTP 201
+                    reply(observation).created(
+                        '/observation/' + observation._id + "/id");
                 } else {
                     if (11000 === err.code || 11001 === err.code) {
-                        reply(Boom.forbidden("please provide another observationi id, it already exist"));
-                    } else reply(Boom.forbidden(getErrorMessageFrom(err))); // HTTP 403
+                        reply(Boom.forbidden(
+                            "please provide another observationi id, it already exist"));
+                    } else {
+                        reply(Boom.forbidden(getErrorMessageFrom(err)));
+                    }
                 }
             });
         }
