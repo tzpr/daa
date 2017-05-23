@@ -55,7 +55,7 @@ module.exports = [{
                 }
             },
             description: 'Get observation by id',
-            notes: 'dadaa',
+            notes: 'Get observation by id',
             tags: ['api', 'observation details']
         }
     },
