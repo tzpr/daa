@@ -1,4 +1,4 @@
-const Observation = require('../models/observation').Observation;
+const Observation = require('../models/observation');
 const Joi = require('joi');
 const Boom = require('boom');
 
@@ -65,8 +65,9 @@ module.exports = [{
         config: {
             validate: {
                 payload: {
-                    name: Joi.string().required(),
-                    year: Joi.number().integer().min(2015).max(2020).required()
+                    species: Joi.string().required(),
+                    count: Joi.number().required(),
+                    state: Joi.string().required(),
                 }
             },
             description: 'Save new observation to db',
@@ -74,7 +75,19 @@ module.exports = [{
             tags: ['api', 'save observation']
         },
         handler: function(request, reply) {
-            var observation = new Observation(request.payload);
+            var observation = new Observation({
+                species: request.payload.species,
+                time: new Date().getTime(),
+                year: new Date().getFullYear(),
+                count: request.payload.count,
+                state: request.payload.state,
+                location: {
+                    lat: (request.payload.location) ? request.payload.location.lat : "",
+                    lng: (request.payload.location) ? request.payload.location.lng : "",
+                    accuracy: (request.payload.location) ? request.payload.location.accuracy : ""
+                }
+
+            });
             observation.save(function(err, user) {
                 if (!err) {
                     reply(observation).created(

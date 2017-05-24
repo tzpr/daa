@@ -1,16 +1,22 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
-var ObservationSchema = new Schema({
-  name: String,
-  year: Number,
-  description: String,
-  location: { lat: String, lng: String },
-  date: { type: Date, default: Date.now }
+var observationSchema = new mongoose.Schema({
+    species: {type: String, required: true},
+    time: {type: Number, required: true, unique: true},
+    count: {type: Number, required: true},
+    year: {type: Number, required: true},
+    state: {type: String, required: true},
+    location: {
+        lat: {type: Number},
+        lng: {type: Number},
+        accuracy: {type: Number}
+    }
 });
 
-var observation = mongoose.model('Observation', ObservationSchema);
+// function to return observations by year
 
-module.exports = {
-    Observation: observation
-};
+
+
+var Observation = mongoose.model('Observation', observationSchema);
+
+module.exports = Observation;

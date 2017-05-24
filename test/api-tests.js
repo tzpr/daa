@@ -29,8 +29,9 @@ describe('api POST requests', () => {
             method: 'POST',
             url: '/observation',
             payload: {
-                name: 'Räyskä',
-                year: 2017
+                species: 'Räyskä',
+                count: 1,
+                state: "p"
             }
         };
 
