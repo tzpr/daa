@@ -1,3 +1,5 @@
+'use strict';
+
 var mongoose = require('mongoose');
 
 var observationSchema = new mongoose.Schema({
@@ -12,10 +14,6 @@ var observationSchema = new mongoose.Schema({
         accuracy: {type: Number}
     }
 });
-
-// function to return observations by year
-
-
 
 var Observation = mongoose.model('Observation', observationSchema);
 
