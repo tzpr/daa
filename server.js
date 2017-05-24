@@ -10,7 +10,6 @@ const Vision = require('vision');
 const Swagger = require('hapi-swagger');
 const server = new Hapi.Server();
 const database = require('./data/database');
-const Boom = require('boom');
 const HapiJWT = require('hapi-auth-jwt2');
 const routes = require('./routes/routes');
 
