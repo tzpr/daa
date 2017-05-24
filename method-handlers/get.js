@@ -16,7 +16,6 @@ module.exports.getObservationsByYear = function(request, reply) {
     });
 }
 
-
 module.exports.getObservationById = function(request, reply) {
     Observation.findOne({
         '_id': encodeURIComponent(request.params.id)

@@ -1,8 +1,8 @@
 'use strict';
 
-const Joi = require('joi');
 const getMethods = require('../method-handlers/get');
 const postMethods = require('../method-handlers/post');
+const validator = require('../validators/params');
 
 
 module.exports = [{
@@ -17,11 +17,7 @@ module.exports = [{
         path: '/observation/{year}/year',
         handler: getMethods.getObservationsByYear,
         config: {
-            validate: {
-                params: {
-                    year: Joi.number().integer().min(2015).max(2020).required()
-                }
-            },
+            validate: validator.getObservationsByYearParams,
             description: 'Get list of observations by given year',
             notes: 'The year parameter defaults to current year if not specified',
             tags: ['api', 'observation listing']
@@ -32,11 +28,7 @@ module.exports = [{
         path: '/observation/{id}/id',
         handler: getMethods.getObservationById,
         config: {
-            validate: {
-                params: {
-                    id: Joi.required()
-                }
-            },
+            validate: validator.getObservationsByIdParams,
             description: 'Get observation by id',
             notes: 'Get observation by id',
             tags: ['api', 'observation details']
@@ -47,13 +39,7 @@ module.exports = [{
         path: '/observation',
         handler: postMethods.saveObservation,
         config: {
-            validate: {
-                payload: {
-                    species: Joi.string().required(),
-                    count: Joi.number().required(),
-                    state: Joi.string().required(),
-                }
-            },
+            validate: validator.postObservationParams,
             description: 'Save new observation to db',
             notes: 'Save new observation to db',
             tags: ['api', 'save observation']
