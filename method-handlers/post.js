@@ -1,7 +1,7 @@
 'use strict';
 
 const Boom = require('boom');
-const Observation = require('../db/models/observation');
+const Observation = require('../data/models/observation');
 
 module.exports.saveObservation = function(request, reply) {
     var observation = new Observation({
