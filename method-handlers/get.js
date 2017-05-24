@@ -28,3 +28,7 @@ module.exports.getObservationById = function(request, reply) {
         }
     });
 }
+
+module.exports.emptyPlaceHolderToBeImplemented = function(request, reply) {
+    reply(Boom.badImplementation("not implemented"));
+}

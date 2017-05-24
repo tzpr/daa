@@ -35,6 +35,61 @@ module.exports = [{
         }
     },
     {
+        method: 'GET',
+        path: '/observation/species/count',
+        handler: getMethods.emptyPlaceHolderToBeImplemented,
+        config: {
+            validate: {},
+            description: 'The all time number of different species',
+            notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db.',
+            tags: ['api', 'elis']
+        }
+    },
+    {
+        method: 'GET',
+        path: '/observation/species/count/{year}/year',
+        handler: getMethods.emptyPlaceHolderToBeImplemented,
+        config: {
+            validate: {},
+            description: 'The number of different species in given year',
+            notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db for the specified year.',
+            tags: ['api', 'vuodari']
+        }
+    },
+    {
+        method: 'GET',
+        path: '/observation/species',
+        handler: getMethods.emptyPlaceHolderToBeImplemented,
+        config: {
+            validate: {},
+            description: 'Get list of different species',
+            notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db.',
+            tags: ['api', 'observation listing, elis list']
+        }
+    },
+    {
+        method: 'GET',
+        path: '/observation/species/{year}/year',
+        handler: getMethods.emptyPlaceHolderToBeImplemented,
+        config: {
+            validate: {},
+            description: 'Get list of different species by given year',
+            notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db for the specified year.',
+            tags: ['api', 'observation listing, vuodari list']
+        }
+    },
+    {
+        method: 'GET',
+        path: '/observation/species/{year}/year/elisdiff',
+        handler: getMethods.emptyPlaceHolderToBeImplemented,
+        config: {
+            validate: {},
+            description: 'Get the diff of species by given a year and all time species list',
+            notes: 'NOT IMPLEMENTED YET. Returns the names of species found in db for the specified year.',
+            tags: ['api', 'observation listing, missing from vuodari list']
+        }
+    },
+    {
         method: 'POST',
         path: '/observation',
         handler: postMethods.saveObservation,
