@@ -1,6 +1,6 @@
 'use strict';
 
-const Boom = require('boom');
+const Boom = require('boom'); // https://github.com/hapijs/boom
 const Observation = require('../data/models/observation');
 
 module.exports.saveObservation = function(request, reply) {
@@ -26,7 +26,10 @@ module.exports.saveObservation = function(request, reply) {
                 reply(Boom.forbidden(
                     "please provide another observationi id, it already exist"));
             } else {
-                reply(Boom.forbidden(getErrorMessageFrom(err)));
+                //reply(Boom.forbidden(getErrorMessageFrom(err)));
+                reply(Boom.create(err.code, err.message, {
+                    timestamp: Date.now()
+                }));
             }
         }
     });

@@ -1,6 +1,8 @@
-const Code = require('code'); // assertion library
-const Lab = require('lab');
+
+const Code = require('code'); //https://github.com/hapijs/code
+const Lab = require('lab'); //https://github.com/hapijs/lab
 const lab = exports.lab = Lab.script();
+
 
 const describe = lab.describe;
 const it = lab.it;
@@ -180,7 +182,7 @@ describe('api GET requests', () => {
 
     it('returns validation error if too small year parameter value is used', (done) => {
         const year = 1999;
-        const options = {
+        const      options = {
             method: "GET",
             url: "/observation/" + year + "/year"
         };
@@ -213,6 +215,20 @@ describe('api GET requests', () => {
 
         server.inject(options, function(response) {
             expect(response.statusCode).to.equal(400);
+            server.stop(done);
+        });
+    });
+
+    // not sure if this is what we want. 404 would be better...
+    it('returns error if invalid id is used', (done) => {
+        const id = 'daad';
+        const options = {
+            method: "GET",
+            url: "/observation/" + id + "/id"
+        };
+
+        server.inject(options, function(response) {
+            expect(response.statusCode).to.equal(500);
             server.stop(done);
         });
     });

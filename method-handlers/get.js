@@ -1,6 +1,6 @@
 'use strict';
 
-const Boom = require('boom');
+const Boom = require('boom'); // https://github.com/hapijs/boom
 const Observation = require('../data/models/observation');
 
 
@@ -16,12 +16,13 @@ module.exports.getObservationsByYear = function(request, reply) {
     });
 }
 
+
 module.exports.getObservationById = function(request, reply) {
     Observation.findOne({
         '_id': encodeURIComponent(request.params.id)
-    }, function(err, obs) {
+    }, function(err, observation) {
         if (!err) {
-            reply(obs);
+            reply(observation);
         } else {
             reply(Boom.badImplementation(err));
         }

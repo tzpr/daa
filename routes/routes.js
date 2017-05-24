@@ -28,7 +28,7 @@ module.exports = [{
         path: '/observation/{id}/id',
         handler: getMethods.getObservationById,
         config: {
-            validate: validator.getObservationsByIdParams,
+            validate: validator.getObservationByIdParams,
             description: 'Get observation by id',
             notes: 'Get observation by id',
             tags: ['api', 'observation details']

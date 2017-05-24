@@ -1,7 +1,6 @@
 'use strict';
 
-const Joi = require('joi');
-
+const Joi = require('joi'); // https://github.com/hapijs/joi
 
 
 module.exports.postObservationParams = {
@@ -18,8 +17,8 @@ module.exports.getObservationsByYearParams = {
     }
 };
 
-module.exports.getObservationByIdParmas = {
+module.exports.getObservationByIdParams = {
     params: {
-        id: Joi.required()
+        id: Joi.string().alphanum().required()
     }
 };
