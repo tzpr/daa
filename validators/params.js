@@ -2,11 +2,13 @@
 
 const Joi = require('joi');
 
+
+
 module.exports.postObservationParams = {
     payload: {
-        species: Joi.string().required(),
+        species: Joi.string().min(3).required(),
         count: Joi.number().required(),
-        state: Joi.string().required(),
+        state: Joi.string().regex(/^[p | ä | Än | Ä | m]$/).required(),
     }
 };
 

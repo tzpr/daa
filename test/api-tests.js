@@ -23,8 +23,7 @@ describe('just dummy test testing', () => {
 
 describe('api POST requests', () => {
 
-    it('saves observation', (done) => {
-
+    it('saves valid observation object', (done) => {
         const options = {
             method: 'POST',
             url: '/observation',
@@ -34,9 +33,117 @@ describe('api POST requests', () => {
                 state: "p"
             }
         };
-
         server.inject(options, (response) => {
             expect(response.statusCode).to.equal(201);
+            done();
+        });
+    });
+
+    it('returns validation error when observation has invalid state', (done) => {
+        const options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 'Räyskä',
+                count: 1,
+                state: "Gh"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(400);
+            done();
+        });
+    });
+
+    it('returns validation error when observation is missing mandatory count attribute', (done) => {
+        const options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 'Räyskä',
+                state: "p"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(400);
+            done();
+        });
+    });
+
+    it('returns validation error when observation is missing mandatory species attribute', (done) => {
+        const options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                count: 100,
+                state: "p"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(400);
+            done();
+        });
+    });
+
+    it('returns validation error when observation is missing mandatory state attribute', (done) => {
+        const options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 'Räyskä',
+                count: 100
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(400);
+            done();
+        });
+    });
+
+    it('returns validation error when observation count attribute is not number', (done) => {
+        const options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 'Räyskä',
+                count: 'NotNumber',
+                state: "p"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(400);
+            done();
+        });
+    });
+
+    it('returns validation error when observation species attribute is not a string', (done) => {
+        const options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 1234,
+                count: 1,
+                state: "p"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(400);
+            done();
+        });
+    });
+
+    it('returns validation error when observation species attribute value is too short', (done) => {
+        const options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 'Py',
+                count: 12,
+                state: "p"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(400);
             done();
         });
     });
@@ -46,13 +153,11 @@ describe('api POST requests', () => {
 describe('api GET requests', () => {
 
     it('returns observations by the given year', (done) => {
-
         const year = 2017;
         const options = {
             method: "GET",
             url: "/observation/" + year + "/year"
         };
-
         // server.inject lets you simulate an http request
         server.inject(options, function(response) {
             expect(response.statusCode).to.equal(200);
