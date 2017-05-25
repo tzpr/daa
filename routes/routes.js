@@ -2,8 +2,8 @@
 
 'use strict';
 
-const getMethods = require('../method-handlers/get');
-const postMethods = require('../method-handlers/post');
+const getMethods = require('./method-handlers/get');
+const postMethods = require('./method-handlers/post');
 const validator = require('../validators/params');
 
 

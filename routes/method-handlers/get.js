@@ -3,7 +3,7 @@
 'use strict';
 
 const Boom = require('boom'); // https://github.com/hapijs/boom
-const Observation = require('../data/models/observation');
+const Observation = require('../../data/models/observation');
 
 
 module.exports.getObservationsByYear = (request, reply) => {
