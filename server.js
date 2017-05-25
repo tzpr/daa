@@ -12,6 +12,7 @@ const Swagger = require('hapi-swagger'); // https://github.com/glennjones/hapi-s
 const server = new Hapi.Server();
 const database = require('./data/database');
 const routes = require('./routes/routes');
+const embeddedjs = require('ejs');
 
 
 server.connection({
@@ -53,6 +54,13 @@ server.register([
     if (err) {
         throw err; // something bad happened loading the plugin
     }
+
+    server.views({
+            engines: { ejs: embeddedjs },
+            relativeTo: __dirname,
+            path: 'view/templates'
+        });
+
     server.start((err) => {
         if (err) {
             throw err;

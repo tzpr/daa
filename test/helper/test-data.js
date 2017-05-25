@@ -69,7 +69,7 @@ function observationSet_20170520() {
             },
             "year": 2017,
             "count": 2,
-            "state": "Än",
+            "state": "p",
             "time": "1495227600002"
         }
     ];
@@ -116,7 +116,7 @@ function observationSet_20170524() {
             },
             "year": 2017,
             "count": 1,
-            "state": "Än",
+            "state": "ä",
             "time": "1495573200002"
         },
         {
@@ -128,7 +128,7 @@ function observationSet_20170524() {
             },
             "year": 2017,
             "count": 7,
-            "state": "Än",
+            "state": "m",
             "time": "1495573200003"
         }
     ];
@@ -176,7 +176,7 @@ function observationSet_20160524() {
             },
             "year": 2016,
             "count": 3,
-            "state": "Än",
+            "state": "p",
             "time": "1464037200002"
         },
         {
@@ -188,7 +188,7 @@ function observationSet_20160524() {
             },
             "year": 2016,
             "count": 17,
-            "state": "Än",
+            "state": "p",
             "time": "1464037200003"
         },
         {

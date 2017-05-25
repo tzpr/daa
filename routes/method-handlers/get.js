@@ -6,6 +6,14 @@ const Boom = require('boom'); // https://github.com/hapijs/boom
 const Observation = require('../../data/models/observation');
 
 
+module.exports.rootHandler = (request, reply) => {
+
+    reply.view('index', {
+        title: 'Havis | Hapi ' + request.server.version,
+        message: 'Hello World!'
+    });
+};
+
 module.exports.getObservationsByYear = (request, reply) => {
     Observation.find({
         'year': encodeURIComponent(request.params.year)
