@@ -14,7 +14,7 @@ const server = require("../server.js");
 
 describe('api POST requests', () => {
 
-    it('saves valid observation object', (done) => {
+    it('saves valid observation object, state p', (done) => {
         var options = {
             method: 'POST',
             url: '/observation',
@@ -22,6 +22,54 @@ describe('api POST requests', () => {
                 species: 'API-Post-Test-Räyskä',
                 count: 1,
                 state: "p"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(201);
+            done();
+        });
+    });
+
+    it('saves valid observation object, state Ä', (done) => {
+        var options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 'API-Post-Test-Lapintiira',
+                count: 1,
+                state: "Ä"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(201);
+            done();
+        });
+    });
+
+    it('saves valid observation object, state ä', (done) => {
+        var options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 'API-Post-Test-Kalatiira',
+                count: 1,
+                state: "ä"
+            }
+        };
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(201);
+            done();
+        });
+    });
+
+    it('saves valid observation object, state m', (done) => {
+        var options = {
+            method: 'POST',
+            url: '/observation',
+            payload: {
+                species: 'API-Post-Test-Kalatiira',
+                count: 1,
+                state: "m"
             }
         };
         server.inject(options, (response) => {

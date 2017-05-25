@@ -7,7 +7,7 @@ module.exports.postObservationParams = {
     payload: {
         species: Joi.string().min(3).required(),
         count: Joi.number().required(),
-        state: Joi.string().regex(/^[p | ä | Än | Ä | m]$/).required(),
+        state: Joi.string().regex(/^[p | ä | Ä | m]$/).required(),
     }
 };
 

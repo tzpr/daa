@@ -5,7 +5,8 @@ const postMethods = require('../method-handlers/post');
 const validator = require('../validators/params');
 
 
-module.exports = [{
+module.exports = [
+    {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
@@ -41,7 +42,7 @@ module.exports = [{
         config: {
             validate: {},
             description: 'Get count of species',
-            notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db (aka the elis count).',
+            notes: 'Returns the count of different species found in db (aka the elis count).',
             tags: ['api']
         }
     },
