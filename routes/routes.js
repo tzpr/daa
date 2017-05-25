@@ -85,12 +85,12 @@ module.exports = [
     // },
     {
         method: 'GET',
-        path: '/observation/species/{year}/year/missing',
+        path: '/observation/species/{year}/missing',
         handler: getMethods.getMissingObervationsForYear,
         config: {
             validate: validator.getObservationsByYearParams, // re-using the validation. maybe should rename.
             description: 'Get diff of two species lists, the missing species',
-            notes: 'This is actually vuodari elis diff',
+            notes: 'NOT IMPLEMENTED YET. This is actually vuodari elis diff',
             tags: ['api']
         }
     },
