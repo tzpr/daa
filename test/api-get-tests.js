@@ -82,6 +82,19 @@ describe('api GET requests', () => {
         });
     });
 
+    it('eturns count of different species for the given year', (done) => {
+        var year = 2017,
+            options = {
+                method: "GET",
+                url: "/observation/species/count/" + year + "/year"
+            };
+        // server.inject lets you simulate an http request
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(200);
+            server.stop(done); // done() callback is required to end the test.
+        });
+    });
+
     it('returns observations by the given year', (done) => {
         var year = 2017,
             options = {

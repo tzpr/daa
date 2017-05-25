@@ -6,7 +6,7 @@ const validator = require('../validators/params');
 
 
 module.exports = [
-    {
+    {   // TODO: put something to the root
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
@@ -20,7 +20,7 @@ module.exports = [
         config: {
             validate: validator.getObservationsByYearParams,
             description: 'Get list of observations',
-            notes: 'The year parameter defaults to current year if not specified',
+            notes: 'Get list of observations by given year',
             tags: ['api'] // tag attribute for Swagger to include this api endpoint in documentation
         }
     },
@@ -49,9 +49,9 @@ module.exports = [
     {
         method: 'GET',
         path: '/observation/species/count/{year}/year',
-        handler: getMethods.emptyPlaceHolderToBeImplemented,
+        handler: getMethods.getCountOfSpeciesByYear,
         config: {
-            validate: {},
+            validate: validator.getObservationsByYearParams, // re-using the validation. maybe should rename.
             description: 'Get count of species by year',
             notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db for the specified year (aka the vuodari count).',
             tags: ['api']

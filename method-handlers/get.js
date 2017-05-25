@@ -16,7 +16,6 @@ module.exports.getObservationsByYear = (request, reply) => {
     });
 }
 
-
 module.exports.getObservationById = (request, reply) => {
     Observation.findOne({
         '_id': encodeURIComponent(request.params.id)
@@ -32,6 +31,18 @@ module.exports.getObservationById = (request, reply) => {
 //https://github.com/Automattic/mongoose/issues/4063
 module.exports.getCountOfSpecies = (request, reply) => {
     Observation.distinct('species', (err, count) => {
+        if (!err) {
+            reply({count: count.length});
+        } else {
+            reply(Boom.badImplementation(err));
+        }
+    });
+}
+
+module.exports.getCountOfSpeciesByYear = (request, reply) => {
+    Observation.find(
+        {'year': encodeURIComponent(request.params.year)}).distinct(
+            'species', (err, count) => {
         if (!err) {
             reply({count: count.length});
         } else {
