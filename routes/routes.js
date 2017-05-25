@@ -18,9 +18,9 @@ module.exports = [{
         handler: getMethods.getObservationsByYear,
         config: {
             validate: validator.getObservationsByYearParams,
-            description: 'Get list of observations by given year',
+            description: 'Get list of observations',
             notes: 'The year parameter defaults to current year if not specified',
-            tags: ['api', 'observation listing']
+            tags: ['api'] // tag attribute for Swagger to include this api endpoint in documentation
         }
     },
     {
@@ -29,9 +29,9 @@ module.exports = [{
         handler: getMethods.getObservationById,
         config: {
             validate: validator.getObservationByIdParams,
-            description: 'Get observation by id',
+            description: 'Get observation',
             notes: 'Get observation by id',
-            tags: ['api', 'observation details']
+            tags: ['api']
         }
     },
     {
@@ -40,9 +40,9 @@ module.exports = [{
         handler: getMethods.emptyPlaceHolderToBeImplemented,
         config: {
             validate: {},
-            description: 'The all time number of different species',
-            notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db.',
-            tags: ['api', 'elis']
+            description: 'Get count of species',
+            notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db (aka the elis count).',
+            tags: ['api']
         }
     },
     {
@@ -51,9 +51,9 @@ module.exports = [{
         handler: getMethods.emptyPlaceHolderToBeImplemented,
         config: {
             validate: {},
-            description: 'The number of different species in given year',
-            notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db for the specified year.',
-            tags: ['api', 'vuodari']
+            description: 'Get count of species by year',
+            notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db for the specified year (aka the vuodari count).',
+            tags: ['api']
         }
     },
     {
@@ -62,9 +62,9 @@ module.exports = [{
         handler: getMethods.emptyPlaceHolderToBeImplemented,
         config: {
             validate: {},
-            description: 'Get list of different species',
-            notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db.',
-            tags: ['api', 'observation listing, elis list']
+            description: 'Get list of species',
+            notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db (aka the elis list).',
+            tags: ['api']
         }
     },
     {
@@ -73,9 +73,9 @@ module.exports = [{
         handler: getMethods.emptyPlaceHolderToBeImplemented,
         config: {
             validate: {},
-            description: 'Get list of different species by given year',
-            notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db for the specified year.',
-            tags: ['api', 'observation listing, vuodari list']
+            description: 'Get list of species by year',
+            notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db for the specified year (aka the vuodari list).',
+            tags: ['api']
         }
     },
     {
@@ -84,9 +84,9 @@ module.exports = [{
         handler: getMethods.emptyPlaceHolderToBeImplemented,
         config: {
             validate: {},
-            description: 'Get the diff of species by given a year and all time species list',
-            notes: 'NOT IMPLEMENTED YET. Returns the names of species found in db for the specified year.',
-            tags: ['api', 'observation listing, missing from vuodari list']
+            description: 'Get diff of two species lists',
+            notes: 'NOT IMPLEMENTED YET. Returns the names of species found in db for the specified year (vuodari elis diff).',
+            tags: ['api']
         }
     },
     {
@@ -95,9 +95,9 @@ module.exports = [{
         handler: postMethods.saveObservation,
         config: {
             validate: validator.postObservationParams,
-            description: 'Save new observation to db',
+            description: 'Post observation',
             notes: 'Save new observation to db',
-            tags: ['api', 'save observation']
+            tags: ['api']
         }
     }
 ];

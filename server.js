@@ -4,13 +4,12 @@
 require('dotenv').load();
 
 const Hapi = require('hapi');
-const Good = require('good');
-const Inert = require('inert');
-const Vision = require('vision');
-const Swagger = require('hapi-swagger');
+const Good = require('good'); // https://github.com/hapijs/good
+const Inert = require('inert'); // https://github.com/hapijs/inert
+const Vision = require('vision'); // https://github.com/hapijs/vision
+const Swagger = require('hapi-swagger'); // https://github.com/glennjones/hapi-swagger
 const server = new Hapi.Server();
 const database = require('./data/database');
-const HapiJWT = require('hapi-auth-jwt2');
 const routes = require('./routes/routes');
 
 
