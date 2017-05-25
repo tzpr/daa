@@ -17,7 +17,7 @@ module.exports.saveObservation = function(request, reply) {
         }
 
     });
-    observation.save(function(err, user) {
+    observation.save(function(err, observation) {
         if (!err) {
             reply(observation).created(
                 '/observation/' + observation._id + "/id");
