@@ -62,11 +62,11 @@ module.exports = [
     {
         method: 'GET',
         path: '/observation/species',
-        handler: getMethods.emptyPlaceHolderToBeImplemented,
+        handler: getMethods.getListOfSpecies,
         config: {
             validate: {},
             description: 'Get list of species',
-            notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db (aka the elis list).',
+            notes: 'Returns the names of different species found in db (aka the elis list).',
             tags: ['api']
         }
     },

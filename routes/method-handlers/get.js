@@ -53,6 +53,16 @@ module.exports.getCountOfSpeciesByYear = (request, reply) => {
     });
 };
 
+module.exports.getListOfSpecies = (request, reply) => {
+    Observation.distinct('species', (err, species) => {
+        if (!err) {
+            reply({elis: species});
+        } else {
+            reply(Boom.badImplementation(err));
+        }
+    });
+};
+
 module.exports.emptyPlaceHolderToBeImplemented = (request, reply) => {
     reply(Boom.badImplementation("not implemented"));
 };

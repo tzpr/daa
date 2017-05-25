@@ -66,11 +66,10 @@ describe('api GET requests', () => {
     });
 
     it('returns count of different species', (done) => {
-        var year = 2017,
-            options = {
-                method: "GET",
-                url: "/observation/species/count"
-            };
+        var options = {
+            method: "GET",
+            url: "/observation/species/count"
+        };
 
         server.inject(options, (response) => {
             var result = response.result;
@@ -80,6 +79,20 @@ describe('api GET requests', () => {
 
             expect(response.statusCode).to.equal(200);
 
+            server.stop(done);
+        });
+    });
+
+    it('returns list of different species', (done) => {
+        var options = {
+            method: "GET",
+            url: "/observation/species"
+        };
+
+        server.inject(options, (response) => {
+            var result = response.result;
+
+            expect(response.statusCode).to.equal(200);
             server.stop(done);
         });
     });
