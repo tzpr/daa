@@ -37,7 +37,7 @@ module.exports = [{
     {
         method: 'GET',
         path: '/observation/species/count',
-        handler: getMethods.emptyPlaceHolderToBeImplemented,
+        handler: getMethods.getCountOfSpecies,
         config: {
             validate: {},
             description: 'Get count of species',

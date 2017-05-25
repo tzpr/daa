@@ -154,6 +154,19 @@ describe('api POST requests', () => {
 
 describe('api GET requests', () => {
 
+    it('returns count of different species', (done) => {
+        const year = 2017;
+        const options = {
+            method: "GET",
+            url: "/observation/species/count"
+        };
+        // server.inject lets you simulate an http request
+        server.inject(options, function(response) {
+            expect(response.statusCode).to.equal(200);
+            server.stop(done); // done() callback is required to end the test.
+        });
+    });
+
     it('returns observations by the given year', (done) => {
         const year = 2017;
         const options = {
