@@ -31,10 +31,11 @@ module.exports.getObservationById = (request, reply) => {
 };
 
 //https://github.com/Automattic/mongoose/issues/4063
-module.exports.getCountOfSpecies = (request, reply) => {
-    Observation.distinct('species', (err, count) => {
+module.exports.getElisListOfSpecies = (request, reply) => {
+    Observation.distinct('species', (err, species) => {
         if (!err) {
-            reply({count: count.length});
+            reply({count: species.length,
+                   list: species });
         } else {
             reply(Boom.badImplementation(err));
         }

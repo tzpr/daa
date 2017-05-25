@@ -68,7 +68,7 @@ describe('api GET requests', () => {
     it('returns count of different species', (done) => {
         var options = {
             method: "GET",
-            url: "/observation/species/count"
+            url: "/observation/species"
         };
 
         server.inject(options, (response) => {

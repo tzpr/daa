@@ -39,12 +39,13 @@ module.exports = [
     },
     {
         method: 'GET',
-        path: '/observation/species/count',
-        handler: getMethods.getCountOfSpecies,
+        path: '/observation/species',
+        handler: getMethods.getElisListOfSpecies,
         config: {
             validate: {},
-            description: 'Get count of species',
-            notes: 'Returns the count of different species found in db (aka the elis count).',
+            description: 'Get count of species and list of them',
+            notes: 'Returns the count of different species found in db (aka the elis count) and ' +
+            'also a list of different species found in db (aka the elis list)..',
             tags: ['api']
         }
     },
@@ -59,17 +60,17 @@ module.exports = [
             tags: ['api']
         }
     },
-    {
-        method: 'GET',
-        path: '/observation/species',
-        handler: getMethods.getListOfSpecies,
-        config: {
-            validate: {},
-            description: 'Get list of species',
-            notes: 'Returns the names of different species found in db (aka the elis list).',
-            tags: ['api']
-        }
-    },
+    // {
+    //     method: 'GET',
+    //     path: '/observation/species',
+    //     handler: getMethods.getListOfSpecies,
+    //     config: {
+    //         validate: {},
+    //         description: 'Get list of species',
+    //         notes: 'Returns the names of different species found in db (aka the elis list).',
+    //         tags: ['api']
+    //     }
+    // },
     {
         method: 'GET',
         path: '/observation/species/{year}/year',
