@@ -1,3 +1,4 @@
+/* jshint node: true */
 'use strict';
 
 // load env variables from .env file

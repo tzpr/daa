@@ -4,7 +4,7 @@
   "description": "node.js server application",
   "main": "server.js",
   "scripts": {
-    "test": "lab"
+    "test": "./node_modules/jshint/bin/jshint server.js && lab"
   },
   "keywords": [
     "node.js",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "code": "4.0.0",
+    "jshint": "2.9.4",
     "lab": "13.0.4"
   }
 }
