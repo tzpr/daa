@@ -35,7 +35,8 @@ module.exports.allObservations = () => {
 // 12 * Passer Domesticus, state "p"
 // 2 * Turdus Philomecus, state "Än"
 function observationSet_20170520() {
-    const observations = [{
+    const observations = [
+        {
             "species": "Pica Pica",
             "location": {
                 "lat": 60.2187743,
@@ -48,7 +49,7 @@ function observationSet_20170520() {
             "time": "1495227600000"
         },
         {
-            "species": 'Passer Domesticus',
+            "species": "Passer Domesticus",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -60,7 +61,7 @@ function observationSet_20170520() {
             "time": "1495227600001"
         },
         {
-            "species": 'Turdus Philomecus',
+            "species": "Turdus Philomecus",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -81,8 +82,9 @@ function observationSet_20170520() {
 // 1 * Alauda Arvensis, state "Än"
 // 7 * Apus Apus, state "Än"
 function observationSet_20170524() {
-    const observations = [{
-            "species": 'Aythia Ferina',
+    const observations = [
+        {
+            "species": "Aythia Ferina",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -94,7 +96,7 @@ function observationSet_20170524() {
             "time": "1495573200000"
         },
         {
-            "species": 'Larus Argentatus',
+            "species": "Larus Argentatus",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -106,7 +108,7 @@ function observationSet_20170524() {
             "time": "1495573200001"
         },
         {
-            "species": 'Alauda Arvensis',
+            "species": "Alauda Arvensis",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -118,7 +120,7 @@ function observationSet_20170524() {
             "time": "1495573200002"
         },
         {
-            "species": 'Apus Apus',
+            "species": "Apus Apus",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -140,8 +142,9 @@ function observationSet_20170524() {
 // 17 * Apus Apus, state "Än"
 // 4 * Mergus Merganser, state "p"
 function observationSet_20160524() {
-    const observations = [{
-            "species": 'Aythia Ferina',
+    const observations = [
+        {
+            "species": "Aythia Ferina",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -153,7 +156,7 @@ function observationSet_20160524() {
             "time": "1464037200000"
         },
         {
-            "species": 'Larus Argentatus',
+            "species": "Larus Argentatus",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -165,7 +168,7 @@ function observationSet_20160524() {
             "time": "1464037200001"
         },
         {
-            "species": 'Alauda Arvensis',
+            "species": "Alauda Arvensis",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -177,7 +180,7 @@ function observationSet_20160524() {
             "time": "1464037200002"
         },
         {
-            "species": 'Apus Apus',
+            "species": "Apus Apus",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
@@ -189,7 +192,7 @@ function observationSet_20160524() {
             "time": "1464037200003"
         },
         {
-            "species": 'Mergus Merganser',
+            "species": "Mergus Merganser",
             "location": {
                 "lat": 60.2187743,
                 "lng": 25.0159759,
