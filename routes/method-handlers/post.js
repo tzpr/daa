@@ -6,7 +6,7 @@ const Boom = require('boom'); // https://github.com/hapijs/boom
 const Observation = require('../../data/models/observation');
 
 
-module.exports.saveObservationArray = function(request, reply){
+module.exports.saveObservationArray = (request, reply) => {
     var observationArr = request.payload.observations;
 
     Observation.insertMany(observationArr, (err, docs) => {
@@ -23,7 +23,7 @@ module.exports.saveObservationArray = function(request, reply){
     });
 };
 
-module.exports.saveObservation = function(request, reply) {
+module.exports.saveObservation = (request, reply) => {
     var observation = new Observation({
         species: request.payload.species,
         time: new Date().getTime(),
@@ -37,7 +37,7 @@ module.exports.saveObservation = function(request, reply) {
         }
 
     });
-    observation.save(function(err, observation) {
+    observation.save((err, observation) => {
         if (!err) {
             reply(observation).created(
                 '/observation/' + observation._id + "/id");
