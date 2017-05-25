@@ -42,27 +42,28 @@ module.exports.getElisListOfSpecies = (request, reply) => {
     });
 };
 
-module.exports.getCountOfSpeciesByYear = (request, reply) => {
+module.exports.getListOfSpeciesByYear = (request, reply) => {
     Observation.find(
         {'year': encodeURIComponent(request.params.year)}).distinct(
-            'species', (err, count) => {
+            'species', (err, species) => {
         if (!err) {
-            reply({count: count.length});
+            reply({count: species.length,
+                   list: species });
         } else {
             reply(Boom.badImplementation(err));
         }
     });
 };
 
-module.exports.getListOfSpecies = (request, reply) => {
-    Observation.distinct('species', (err, species) => {
-        if (!err) {
-            reply({elis: species});
-        } else {
-            reply(Boom.badImplementation(err));
-        }
-    });
-};
+// module.exports.getListOfSpecies = (request, reply) => {
+//     Observation.distinct('species', (err, species) => {
+//         if (!err) {
+//             reply({elis: species});
+//         } else {
+//             reply(Boom.badImplementation(err));
+//         }
+//     });
+// };
 
 module.exports.emptyPlaceHolderToBeImplemented = (request, reply) => {
     reply(Boom.badImplementation("not implemented"));

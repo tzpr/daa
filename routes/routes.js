@@ -43,20 +43,21 @@ module.exports = [
         handler: getMethods.getElisListOfSpecies,
         config: {
             validate: {},
-            description: 'Get count of species and list of them',
+            description: 'Get count of different species and a list of them',
             notes: 'Returns the count of different species found in db (aka the elis count) and ' +
-            'also a list of different species found in db (aka the elis list)..',
+            'also a list of different species found in db (aka the elis list).',
             tags: ['api']
         }
     },
     {
         method: 'GET',
-        path: '/observation/species/count/{year}/year',
-        handler: getMethods.getCountOfSpeciesByYear,
+        path: '/observation/species/{year}/year',
+        handler: getMethods.getListOfSpeciesByYear,
         config: {
             validate: validator.getObservationsByYearParams, // re-using the validation. maybe should rename.
-            description: 'Get count of species by year',
-            notes: 'NOT IMPLEMENTED YET. Returns the count of different species found in db for the specified year (aka the vuodari count).',
+            description: 'Get count of different species by year and a list of them',
+            notes: 'Returns the count of different species found in db for the specified year (aka the vuodari count) and ' +
+            'also list of the species (aka the vuodari list)',
             tags: ['api']
         }
     },
@@ -71,17 +72,17 @@ module.exports = [
     //         tags: ['api']
     //     }
     // },
-    {
-        method: 'GET',
-        path: '/observation/species/{year}/year',
-        handler: getMethods.emptyPlaceHolderToBeImplemented,
-        config: {
-            validate: {},
-            description: 'Get list of species by year',
-            notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db for the specified year (aka the vuodari list).',
-            tags: ['api']
-        }
-    },
+    // {
+    //     method: 'GET',
+    //     path: '/observation/species/{year}/year',
+    //     handler: getMethods.emptyPlaceHolderToBeImplemented,
+    //     config: {
+    //         validate: {},
+    //         description: 'Get list of species by year',
+    //         notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db for the specified year (aka the vuodari list).',
+    //         tags: ['api']
+    //     }
+    // },
     {
         method: 'GET',
         path: '/observation/species/{year}/year/elisdiff',

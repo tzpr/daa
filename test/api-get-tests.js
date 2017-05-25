@@ -101,7 +101,7 @@ describe('api GET requests', () => {
         var year = 2017,
             options = {
                 method: "GET",
-                url: "/observation/species/count/" + year + "/year"
+                url: "/observation/species/" + year + "/year"
             };
         // server.inject lets you simulate an http request
         server.inject(options, (response) => {
