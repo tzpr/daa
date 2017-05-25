@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 const Code = require('code'); //https://github.com/hapijs/code
 const Lab = require('lab'); //https://github.com/hapijs/lab
 const lab = exports.lab = Lab.script();

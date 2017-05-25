@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 const Code = require('code'); //https://github.com/hapijs/code
 const Lab = require('lab'); //https://github.com/hapijs/lab
 const lab = exports.lab = Lab.script();
@@ -71,7 +73,7 @@ describe('api GET requests', () => {
             };
 
         server.inject(options, (response) => {
-            var result = response.result
+            var result = response.result;
 
             // FAIL until testdata inserted to db. See before block above.
             //expect(result.count).to.equal(testData.elisCount);

@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 const birds = [
     'Pica Pica',
     'Alauda Arvensis',
@@ -25,7 +27,7 @@ module.exports.allObservations = () => {
     observations.concat(observationSet_20170524());
 
     return observations;
-}
+};
 
 
 // 3 observations, 3 species, 15 birds, date 20.5.2017
@@ -69,7 +71,7 @@ function observationSet_20170520() {
             "state": "Än",
             "time": "1495227600002"
         }
-    ]
+    ];
     return observations;
 }
 

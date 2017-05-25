@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 'use strict';
 
 const Joi = require('joi'); // https://github.com/hapijs/joi

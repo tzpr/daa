@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 'use strict';
 
 const Boom = require('boom'); // https://github.com/hapijs/boom
@@ -19,7 +21,7 @@ module.exports.saveObservationArray = function(request, reply){
             }
         }
     });
-}
+};
 
 module.exports.saveObservation = function(request, reply) {
     var observation = new Observation({
@@ -51,4 +53,4 @@ module.exports.saveObservation = function(request, reply) {
             }
         }
     });
-}
+};

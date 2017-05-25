@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 'use strict';
 
 const Boom = require('boom'); // https://github.com/hapijs/boom
@@ -14,7 +16,7 @@ module.exports.getObservationsByYear = (request, reply) => {
             reply(Boom.badImplementation(err));
         }
     });
-}
+};
 
 module.exports.getObservationById = (request, reply) => {
     Observation.findOne({
@@ -26,7 +28,7 @@ module.exports.getObservationById = (request, reply) => {
             reply(Boom.badImplementation(err));
         }
     });
-}
+};
 
 //https://github.com/Automattic/mongoose/issues/4063
 module.exports.getCountOfSpecies = (request, reply) => {
@@ -37,7 +39,7 @@ module.exports.getCountOfSpecies = (request, reply) => {
             reply(Boom.badImplementation(err));
         }
     });
-}
+};
 
 module.exports.getCountOfSpeciesByYear = (request, reply) => {
     Observation.find(
@@ -49,8 +51,8 @@ module.exports.getCountOfSpeciesByYear = (request, reply) => {
             reply(Boom.badImplementation(err));
         }
     });
-}
+};
 
 module.exports.emptyPlaceHolderToBeImplemented = (request, reply) => {
     reply(Boom.badImplementation("not implemented"));
-}
+};

@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 'use strict';
 
 const getMethods = require('../method-handlers/get');
