@@ -99,5 +99,16 @@ module.exports = [{
             notes: 'Save new observation to db',
             tags: ['api']
         }
+    },
+    {
+        method: 'POST',
+        path: '/observation/many',
+        handler: postMethods.saveObservationArray,
+        config: {
+            validate: {},
+            description: 'Post multiple observations',
+            notes: 'Insert array of observations to db',
+            tags: ['api']
+        }
     }
 ];

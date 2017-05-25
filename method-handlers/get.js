@@ -33,7 +33,7 @@ module.exports.getObservationById = (request, reply) => {
 module.exports.getCountOfSpecies = (request, reply) => {
     Observation.distinct('species', (err, count) => {
         if (!err) {
-            reply(count.length);
+            reply({count: count.length});
         } else {
             reply(Boom.badImplementation(err));
         }

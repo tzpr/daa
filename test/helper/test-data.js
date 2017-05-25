@@ -1,6 +1,3 @@
-const Observation = require('../../data/models/observation');
-
-
 const birds = [
     'Pica Pica',
     'Alauda Arvensis',
@@ -12,18 +9,22 @@ const birds = [
     'Passer Domesticus'
 ];
 
+module.exports.elisCount = 8;
 
+
+
+// different species 8 (elis count) (Pica Pica, Passer Domesticus, Turdus Philomecus, Aythia Ferina,
+// Larus Argentatus, Alauda Arvensis, Apus Apus, Mergus Merganser)
+// species in 2017 7 (vuodari count)
+// species in 2016 5 (vuodari count)
 module.exports.allObservations = () => {
     var observations = [];
-    //observations.append(observationSet_20160524().map(toObservationInstance()));
-    observations.append(observationSet_20170520().map(toObservationInstance()));
-    //observations.append(observationSet_20170524().map(toObservationInstance()));
+
+    observations.concat(observationSet_20160524());
+    observations.concat(observationSet_20170520());
+    observations.concat(observationSet_20170524());
 
     return observations;
-}
-
-function toObservationInstance(json) {
-    return new Observation(json);
 }
 
 
@@ -54,7 +55,7 @@ function observationSet_20170520() {
             "year": 2017,
             "count": 12,
             "state": "p",
-            "time": "1495227600000"
+            "time": "1495227600001"
         },
         {
             "species": 'Turdus Philomecus',
@@ -66,7 +67,7 @@ function observationSet_20170520() {
             "year": 2017,
             "count": 2,
             "state": "Än",
-            "time": "1495227600000"
+            "time": "1495227600002"
         }
     ]
     return observations;
@@ -100,7 +101,7 @@ function observationSet_20170524() {
             "year": 2017,
             "count": 5,
             "state": "p",
-            "time": "1495573200000"
+            "time": "1495573200001"
         },
         {
             "species": 'Alauda Arvensis',
@@ -112,7 +113,7 @@ function observationSet_20170524() {
             "year": 2017,
             "count": 1,
             "state": "Än",
-            "time": "1495573200000"
+            "time": "1495573200002"
         },
         {
             "species": 'Apus Apus',
@@ -124,7 +125,7 @@ function observationSet_20170524() {
             "year": 2017,
             "count": 7,
             "state": "Än",
-            "time": "1495573200000"
+            "time": "1495573200003"
         }
     ];
     return observations;
@@ -159,7 +160,7 @@ function observationSet_20160524() {
             "year": 2016,
             "count": 1,
             "state": "p",
-            "time": "1464037200000"
+            "time": "1464037200001"
         },
         {
             "species": 'Alauda Arvensis',
@@ -171,7 +172,7 @@ function observationSet_20160524() {
             "year": 2016,
             "count": 3,
             "state": "Än",
-            "time": "1464037200000"
+            "time": "1464037200002"
         },
         {
             "species": 'Apus Apus',
@@ -183,7 +184,7 @@ function observationSet_20160524() {
             "year": 2016,
             "count": 17,
             "state": "Än",
-            "time": "1464037200000"
+            "time": "1464037200003"
         },
         {
             "species": 'Mergus Merganser',
@@ -195,7 +196,7 @@ function observationSet_20160524() {
             "year": 2016,
             "count": 4,
             "state": "p",
-            "time": "1464037200000"
+            "time": "1464037200004"
         }
     ];
     return observations;

@@ -3,6 +3,24 @@
 const Boom = require('boom'); // https://github.com/hapijs/boom
 const Observation = require('../data/models/observation');
 
+
+module.exports.saveObservationArray = function(request, reply){
+    var observationArr = request.payload.observations;
+
+    Observation.insertMany(observationArr, (err, docs) => {
+        if (!err) {
+            reply(docs).created('/observation/');
+        }else{
+            if (11000 === err.code || 11001 === err.code) {
+                reply(Boom.forbidden(
+                    "please provide another observationi id, it already exist"));
+            } else {
+                reply(Boom.forbidden(err));
+            }
+        }
+    });
+}
+
 module.exports.saveObservation = function(request, reply) {
     var observation = new Observation({
         species: request.payload.species,

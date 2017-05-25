@@ -25,9 +25,43 @@ describe('just dummy test testing', () => {
     });
 });
 
-
-
 describe('api GET requests', () => {
+
+    function toObservationInstance(json) {
+        return new Observation(json);
+    }
+
+    before((done) => {
+        const testObservations = testData.allObservations().map(toObservationInstance);
+
+        Observation.collection.drop();
+
+        // WTF?! This doesn't populate db... :(
+        Observation.insertMany(testObservations, (err, docs) => {
+            if (err) {
+                throw (err);
+            } else {
+                done();
+            }
+        });
+
+        // var options = {
+        //     method: 'POST',
+        //     url: '/observation/many',
+        //     payload: {
+        //         observations: testData.allObservations()
+        //     }
+        // };
+        // server.inject(options, (response) => {
+        //     expect(response.statusCode).to.equal(201);
+        //     done();
+        // });
+        //done();
+    });
+
+    after((done) => {
+        done();
+    });
 
     it('returns count of different species', (done) => {
         var year = 2017,
@@ -35,10 +69,16 @@ describe('api GET requests', () => {
                 method: "GET",
                 url: "/observation/species/count"
             };
-        // server.inject lets you simulate an http request
+
         server.inject(options, (response) => {
+            var result = response.result
+
+            // FAIL until testdata inserted to db. See before block above.
+            //expect(result.count).to.equal(testData.elisCount);
+
             expect(response.statusCode).to.equal(200);
-            server.stop(done); // done() callback is required to end the test.
+
+            server.stop(done);
         });
     });
 

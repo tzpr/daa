@@ -19,7 +19,7 @@ describe('api POST requests', () => {
             method: 'POST',
             url: '/observation',
             payload: {
-                species: 'Räyskä',
+                species: 'API-Post-Test-Räyskä',
                 count: 1,
                 state: "p"
             }
