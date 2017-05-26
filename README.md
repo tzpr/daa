@@ -6,7 +6,7 @@ Noden päällä pyörivä palvelinsovellus lintuhavaintojen tallentamiseen.
 
 Tarjoaa REST-rajapinnan jota voi käyttää erinäisillä asiakassovelluksilla.
 
-Rajapinnan dokumentaatio ja testailu selaimella: https://havis-node.herokuapp.com/documentation#/
+Rajapinnan dokumentaatio ja testailu selaimella: https://havis-node.herokuapp.com/documentation
 
 [Tuntikirjanpito](https://docs.google.com/spreadsheets/d/1K8Glpp1wciou_UHgp79Y9SB7gtdhW1nfxqMcIz5VTb4/edit?usp=sharing)
 
