@@ -104,7 +104,7 @@ describe('api GET requests', () => {
                 method: "GET",
                 url: "/observation/species/" + year + "/year"
             };
-        
+
         server.inject(options, (response) => {
             expect(response.statusCode).to.equal(200);
             server.stop(done);
@@ -176,7 +176,7 @@ describe('api GET requests', () => {
         });
     });
 
-    it('returns observations by the given year', (done) => {
+    it('returns the diff of all time species and species of the given year', (done) => {
         var year = 2017,
             options = {
                 method: "GET",

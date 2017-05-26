@@ -13,6 +13,12 @@ module.exports.postObservationParams = {
     }
 };
 
+module.exports.postArrayOfObservationsParams = {
+    payload: {
+        speciesArr: Joi.array().required()
+    }
+};
+
 module.exports.getObservationsByYearParams = {
     params: {
         year: Joi.number().integer().min(2015).max(2020).required()

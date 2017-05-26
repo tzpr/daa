@@ -7,42 +7,48 @@ const Observation = require('../../data/models/observation');
 
 
 module.exports.saveObservationArray = (request, reply) => {
-    var observationArr = request.payload.observations;
+    reply(new Promise(function(resolve, reject) {
+        var observationArr = request.payload.speciesArr;
+        var obsInstanceArr = observationArr.map(newObservationInstance);
 
-    Observation.insertMany(observationArr, (err, docs) => {
-        if (!err) {
-            reply(docs).created('/observation/');
-        } else {
-            if (11000 === err.code || 11001 === err.code) {
-                reply(Boom.forbidden(
-                    "please provide another observationi id, it already exist"));
+        Observation.insertMany(obsInstanceArr, (err, docs) => {
+            if (!err) {
+                resolve(docs);
             } else {
-                reply(Boom.forbidden(err));
+                if (11000 === err.code || 11001 === err.code) {
+                    reject(Boom.forbidden(
+                        "Please provide another observation id, it already exist"));
+                } else {
+                    reject(Boom.forbidden(err));
+                }
             }
+        });
+    }));
+};
+
+function newObservationInstance(observation){
+    return new Observation({
+        species: observation.species,
+        time: new Date().getTime(),
+        year: new Date().getFullYear(),
+        count: observation.count,
+        state: observation.state,
+        location: {
+            lat: (observation.location) ? observation.location.lat : "",
+            lng: (observation.location) ? observation.location.lng : "",
+            accuracy: (observation.location) ? observation.location.accuracy : ""
         }
     });
-};
+}
 
 module.exports.saveObservation = (request, reply) => {
     reply(new Promise(function(resolve, reject) {
-        var observation = new Observation({
-            species: request.payload.species,
-            time: new Date().getTime(),
-            year: new Date().getFullYear(),
-            count: request.payload.count,
-            state: request.payload.state,
-            location: {
-                lat: (request.payload.location) ? request.payload.location.lat : "",
-                lng: (request.payload.location) ? request.payload.location.lng : "",
-                accuracy: (request.payload.location) ? request.payload.location.accuracy : ""
-            }
 
-        });
+        var observation = newObservationInstance(request.payload);
+
         observation.save((err, observation) => {
             if (!err) {
                 resolve(observation);
-                //.created(
-                //    '/observation/' + observation._id + "/id");
             } else {
                 if (11000 === err.code || 11001 === err.code) {
                     reject(Boom.forbidden(

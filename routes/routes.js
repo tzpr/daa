@@ -8,7 +8,7 @@ const validator = require('../validators/params');
 
 
 module.exports = [
-    { 
+    {
         method: 'GET',
         path: '/',
         handler: getMethods.rootHandler
@@ -109,7 +109,7 @@ module.exports = [
         path: '/observation/many',
         handler: postMethods.saveObservationArray,
         config: {
-            validate: {},
+            validate: validator.postArrayOfObservationsParams,
             description: 'Post multiple observations',
             notes: 'Insert array of observations to db',
             tags: ['api']
