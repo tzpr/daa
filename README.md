@@ -16,7 +16,7 @@ Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 1. Asenna Node.js (jos ei jo ole koneelle asennettuna)
 
-2. Asenna MongoDB (jos ei jo ole koneelle asennettuna)
+2. Asenna MongoDB-tietokanta (jos ei jo ole koneelle asennettuna)
 
 3. Kloonaa projekti omalle koneelle. 
 
@@ -24,9 +24,9 @@ Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 5. Käynnistä solvellus komennolla npm start.
 
-Sovellus tarvitsee paikallisen MongoDb-tietokannan. 
 
-Projektin hakemistossa /data/test-data-dump on esimerkkidataa, jonka voi tallentaa paikalliseen kantaan komennolla:
+
+Projektin hakemistossa /data/test-data-dump on esimerkkidataa, jonka voi tallentaa paikalliseen MongoDB-kantaan komennolla:
 ```
 mongorestore -d havisMongo -c observations observations.bson 
 ```
