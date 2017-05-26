@@ -33,9 +33,6 @@ mongorestore -d havisMongo -c observations observations.bson
 Komento kannattaa suorittaa /data/test-data-dump -hakemistossa.
 
 ### Testit
-- [lab, Node.js test framework](https://github.com/hapijs/lab)
-
-- [code, BDD Assertion library](https://github.com/hapijs/code)
 
 Suorita API-testit komennolla npm test projektin juuressa.
 
@@ -48,6 +45,10 @@ Suorita API-testit komennolla npm test projektin juuressa.
 - CI tool: [Travis CI with Node.js](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
 
 - Data modeling: http://mongoosejs.com/
+
+- [lab, Node.js test framework](https://github.com/hapijs/lab)
+
+- [code, BDD Assertion library](https://github.com/hapijs/code)
 
 - [Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 
