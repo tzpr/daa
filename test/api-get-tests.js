@@ -104,10 +104,10 @@ describe('api GET requests', () => {
                 method: "GET",
                 url: "/observation/species/" + year + "/year"
             };
-        // server.inject lets you simulate an http request
+        
         server.inject(options, (response) => {
             expect(response.statusCode).to.equal(200);
-            server.stop(done); // done() callback is required to end the test.
+            server.stop(done);
         });
     });
 
@@ -117,10 +117,10 @@ describe('api GET requests', () => {
                 method: "GET",
                 url: "/observation/" + year + "/year"
             };
-        // server.inject lets you simulate an http request
+
         server.inject(options, (response) => {
             expect(response.statusCode).to.equal(200);
-            server.stop(done); // done() callback is required to end the test.
+            server.stop(done);
         });
     });
 
@@ -172,6 +172,19 @@ describe('api GET requests', () => {
 
         server.inject(options, (response) => {
             expect(response.statusCode).to.equal(400);
+            server.stop(done);
+        });
+    });
+
+    it('returns observations by the given year', (done) => {
+        var year = 2017,
+            options = {
+                method: "GET",
+                url: "/observation/species/" + year + "/missing"
+            };
+
+        server.inject(options, (response) => {
+            expect(response.statusCode).to.equal(200);
             server.stop(done);
         });
     });

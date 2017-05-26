@@ -75,42 +75,50 @@ module.exports.getListOfSpeciesByYear = (request, reply) => {
 };
 
 module.exports.getMissingObervationsForYear = (request, reply) => {
-    //return new Promise(function(resolve, reject) {
-    reply(Boom.badImplementation("not implemented"));
-    //     var elisList,
-    //         yearList;
-    //     //
-    //     // function speciesDiff(eList, yList) {
-    //     //     var validList = eList.filter((item) => {
-    //     //         return !yList.has(item);
-    //     //     });
-    //     //     // get a Set of the distinct, valid items
-    //     //     var validItems = new Set(validList);
-    //     //     return validItems;
-    //     // }
-    //     //
-    //     Observation.distinct('species', (err, species) => {
-    //         if (!err) {
-    //             elisList = species;
-    //         } else {
-    //             reply(Boom.badImplementation(err));
-    //         }
-    //     });
-    //     Observation.find({
-    //         'year': encodeURIComponent(request.params.year)
-    //     }).distinct(
-    //         'species', (err, species) => {
-    //             if (!err) {
-    //                 yearList = species;
-    //                 reply({
-    //                     missingSpecies: speciesDiff(elisList, yearList)
-    //                 });
-    //             } else {
-    //                 reply(Boom.badImplementation(err));
-    //             }
-    //         });
-    // });
+    reply(new Promise(function(resolve, reject) {
+
+        var elisList,
+            yearList;
+
+        function speciesDiff(eList, yList) {
+            var missingSpecies = [];
+
+            if (eList) {
+                if (!yList || yList.length === 0) {
+                    return eList;
+                }
+                for (let i = 0; i < eList.length; i++) {
+                    if (!yList.includes(eList[i])) {
+                        missingSpecies.push(eList[i]);
+                    }
+                }
+            }
+            return missingSpecies;
+        }
+
+        Observation.distinct('species', (err, species) => {
+            if (!err) {
+                elisList = species;
+                Observation.find({
+                    'year': encodeURIComponent(request.params.year)
+                }).distinct(
+                    'species', (err, species) => {
+                        if (!err) {
+                            yearList = species;
+                            resolve({
+                                missingSpecies: speciesDiff(elisList, yearList)
+                            });
+                        } else {
+                            reject(Boom.badImplementation(err));
+                        }
+                    });
+            } else {
+                reject(Boom.badImplementation(err));
+            }
+        });
+    }));
 };
+
 
 module.exports.emptyPlaceHolderToBeImplemented = (request, reply) => {
     reply(Boom.badImplementation("not implemented"));
