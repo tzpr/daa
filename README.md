@@ -37,7 +37,7 @@ Komento kannattaa suorittaa /data/test-data-dump -hakemistossa.
 Suorita API-testit komennolla npm test projektin juuressa.
 
 
-### Links
+### Linkkejä aiheeseen liittyen
 - web framework: [hapi.js](https://hapijs.com/)
 
 - validation: [joi](https://github.com/hapijs/joi)
@@ -46,10 +46,10 @@ Suorita API-testit komennolla npm test projektin juuressa.
 
 - Data modeling: http://mongoosejs.com/
 
-- [lab, Node.js test framework](https://github.com/hapijs/lab)
+- Node.js test framework: [lab](https://github.com/hapijs/lab)
 
-- [code, BDD Assertion library](https://github.com/hapijs/code)
+- Test Assertion library: [code](https://github.com/hapijs/code)
+
+- About API design: https://github.com/dwyl/learn-api-design
 
 - [Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
-
-- https://github.com/dwyl/learn-api-design
