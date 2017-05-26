@@ -20,9 +20,9 @@ Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 3. Kloonaa projekti omalle koneelle. 
 
-4. Mene havis-hakemistoon ja suorita komento npm install.
+4. Mene havis-hakemistoon ja suorita komento *npm install*.
 
-5. Käynnistä solvellus komennolla npm start.
+5. Käynnistä solvellus komennolla *npm start*.
 
 
 
@@ -34,7 +34,7 @@ Komento kannattaa suorittaa /data/test-data-dump -hakemistossa.
 
 ### Testit
 
-Suorita API-testit komennolla npm test projektin juuressa.
+Suorita API-testit komennolla *npm test* projektin juuressa.
 
 
 ### Linkkejä aiheeseen liittyen
