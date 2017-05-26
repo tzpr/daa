@@ -52,4 +52,4 @@ Suorita API-testit komennolla npm test projektin juuressa.
 
 - About API design: https://github.com/dwyl/learn-api-design
 
-- [Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+- Basic README writing and formatting syntax [Writing on GitHub](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
