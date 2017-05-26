@@ -60,28 +60,6 @@ module.exports = [
             tags: ['api']
         }
     },
-    // {
-    //     method: 'GET',
-    //     path: '/observation/species',
-    //     handler: getMethods.getListOfSpecies,
-    //     config: {
-    //         validate: {},
-    //         description: 'Get list of species',
-    //         notes: 'Returns the names of different species found in db (aka the elis list).',
-    //         tags: ['api']
-    //     }
-    // },
-    // {
-    //     method: 'GET',
-    //     path: '/observation/species/{year}/year',
-    //     handler: getMethods.emptyPlaceHolderToBeImplemented,
-    //     config: {
-    //         validate: {},
-    //         description: 'Get list of species by year',
-    //         notes: 'NOT IMPLEMENTED YET. Returns the names of different species found in db for the specified year (aka the vuodari list).',
-    //         tags: ['api']
-    //     }
-    // },
     {
         method: 'GET',
         path: '/observation/species/{year}/missing',
@@ -89,7 +67,7 @@ module.exports = [
         config: {
             validate: validator.getObservationsByYearParams, // re-using the validation. maybe should rename.
             description: 'Get diff of two species lists, the missing species',
-            notes: 'NOT IMPLEMENTED YET. This is actually vuodari elis diff',
+            notes: 'This is actually vuodari elis diff',
             tags: ['api']
         }
     },
@@ -111,7 +89,7 @@ module.exports = [
         config: {
             validate: validator.postArrayOfObservationsParams,
             description: 'Post multiple observations',
-            notes: 'Insert array of observations to db',
+            notes: 'NOT READY. Insert array of observations to db',
             tags: ['api']
         }
     }
