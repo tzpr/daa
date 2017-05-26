@@ -6,9 +6,9 @@ Noden päällä pyörivä palvelinsovellus lintuhavaintojen tallentamiseen.
 
 Tarjoaa REST-rajapinnan jota voi käyttää erinäisillä asiakassovelluksilla.
 
-Rajapinnan dokumentaatio: http://havis-node.herokuapp.com/documentation#/
+Rajapinnan dokumentaatio: https://havis-node.herokuapp.com/documentation#/
 
-[Tuntikirjanpito](https://docs.google.com/spreadsheets/d/1NBLY_1rivcEe-nJNlVcYG_qPZA2MytAvqKgr4fHQSiY/edit?usp=sharing)
+[Tuntikirjanpito](https://docs.google.com/spreadsheets/d/1K8Glpp1wciou_UHgp79Y9SB7gtdhW1nfxqMcIz5VTb4/edit?usp=sharing)
 
 Sovellus Herokussa: https://havis-node.herokuapp.com/
 
@@ -19,6 +19,14 @@ Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 3. Käynnistä solvellus komennolla npm start.
 
+Sovellus tarvitsee paikallisen MongoDb tietokannan. 
+
+Projektin hakemistossa /data/test-data-dump on esimerkkidataa jonka voi tallentaa paikalliseen kantaan komennolla
+```
+mongorestore -d havisMongo -c observations observations.bson. 
+```
+Komento kannattaa suorittaa /data/test-data-dump hakemistossa.
+
 ### Testit
 - [lab, Node.js test framework](https://github.com/hapijs/lab)
 
@@ -26,13 +34,6 @@ Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 Suorita API-testit komennolla npm test projektin juuressa.
 
-
-### Esimerkkikäyttötapauksia [Curl](https://curl.haxx.se/)-kutsuina
-
-- GET-pyyntö /observations/{year} polkuun palauttaa parametrina annetun vuoden havainnot JSON-muodossa.
-```
-curl https://havis-node.herokuapp.com/observations/2017
-```
 
 ### Links
 - web framework: [hapi.js](https://hapijs.com/)
