@@ -36,7 +36,8 @@ describe('api GET requests', () => {
     before((done) => {
         const testObservations = testData.allObservations().map(toObservationInstance);
 
-        Observation.collection.drop();
+        // Commented out until insertMany below is fixed
+        //Observation.collection.drop();
 
         // WTF?! This doesn't populate db... :(
         Observation.insertMany(testObservations, (err, docs) => {

@@ -27,7 +27,7 @@ describe('api POST requests', () => {
             }
         };
         server.inject(options, (response) => {
-            expect(response.statusCode).to.equal(201);
+            expect(response.statusCode).to.equal(200);
             done();
         });
     });
@@ -43,7 +43,7 @@ describe('api POST requests', () => {
             }
         };
         server.inject(options, (response) => {
-            expect(response.statusCode).to.equal(201);
+            expect(response.statusCode).to.equal(200);
             done();
         });
     });
@@ -59,7 +59,7 @@ describe('api POST requests', () => {
             }
         };
         server.inject(options, (response) => {
-            expect(response.statusCode).to.equal(201);
+            expect(response.statusCode).to.equal(200);
             done();
         });
     });
@@ -75,7 +75,7 @@ describe('api POST requests', () => {
             }
         };
         server.inject(options, (response) => {
-            expect(response.statusCode).to.equal(201);
+            expect(response.statusCode).to.equal(200);
             done();
         });
     });
