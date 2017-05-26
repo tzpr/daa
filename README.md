@@ -13,19 +13,24 @@ Rajapinnan dokumentaatio: https://havis-node.herokuapp.com/documentation#/
 Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 ### Asennus
-1. Kloonaa projekti omalle koneelle. 
 
-2. Mene havis-hakemistoon ja suorita komento npm install.
+1. Asenna Node.js (jos ei jo ole koneelle asennettuna)
 
-3. Käynnistä solvellus komennolla npm start.
+2. Asenna MongoDB (jos ei jo ole koneelle asennettuna)
+
+3. Kloonaa projekti omalle koneelle. 
+
+4. Mene havis-hakemistoon ja suorita komento npm install.
+
+5. Käynnistä solvellus komennolla npm start.
 
 Sovellus tarvitsee paikallisen MongoDb tietokannan. 
 
-Projektin hakemistossa /data/test-data-dump on esimerkkidataa jonka voi tallentaa paikalliseen kantaan komennolla
+Projektin hakemistossa /data/test-data-dump on esimerkkidataa, jonka voi tallentaa paikalliseen kantaan komennolla:
 ```
 mongorestore -d havisMongo -c observations observations.bson. 
 ```
-Komento kannattaa suorittaa /data/test-data-dump hakemistossa.
+Komento kannattaa suorittaa /data/test-data-dump -hakemistossa.
 
 ### Testit
 - [lab, Node.js test framework](https://github.com/hapijs/lab)
