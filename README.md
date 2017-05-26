@@ -24,11 +24,11 @@ Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 5. Käynnistä solvellus komennolla npm start.
 
-Sovellus tarvitsee paikallisen MongoDb tietokannan. 
+Sovellus tarvitsee paikallisen MongoDb-tietokannan. 
 
 Projektin hakemistossa /data/test-data-dump on esimerkkidataa, jonka voi tallentaa paikalliseen kantaan komennolla:
 ```
-mongorestore -d havisMongo -c observations observations.bson. 
+mongorestore -d havisMongo -c observations observations.bson 
 ```
 Komento kannattaa suorittaa /data/test-data-dump -hakemistossa.
 
