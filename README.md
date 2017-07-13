@@ -6,35 +6,38 @@ Noden päällä pyörivä palvelinsovellus lintuhavaintojen tallentamiseen.
 
 Tarjoaa REST-rajapinnan jota voi käyttää erinäisillä asiakassovelluksilla.
 
-Rajapinnan dokumentaatio: http://havis-node.herokuapp.com/documentation#/
+Rajapinnan dokumentaatio ja testailu selaimella: https://havis-node.herokuapp.com/documentation
 
-[Tuntikirjanpito](https://docs.google.com/spreadsheets/d/1NBLY_1rivcEe-nJNlVcYG_qPZA2MytAvqKgr4fHQSiY/edit?usp=sharing)
+[Tuntikirjanpito](https://docs.google.com/spreadsheets/d/1K8Glpp1wciou_UHgp79Y9SB7gtdhW1nfxqMcIz5VTb4/edit?usp=sharing)
 
 Sovellus Herokussa: https://havis-node.herokuapp.com/
 
 ### Asennus
-1. Kloonaa projekti omalle koneelle. 
 
-2. Mene havis-hakemistoon ja suorita komento npm install.
+1. Asenna Node.js (jos ei jo ole koneelle asennettuna)
 
-3. Käynnistä solvellus komennolla npm start.
+2. Asenna MongoDB-tietokanta (jos ei jo ole koneelle asennettuna)
+
+3. Kloonaa projekti omalle koneelle. 
+
+4. Mene havis-hakemistoon ja suorita komento *npm install*.
+
+5. Käynnistä solvellus komennolla *npm start*.
+
+
+
+Projektin hakemistossa /data/test-data-dump on esimerkkidataa, jonka voi tallentaa paikalliseen MongoDB-kantaan komennolla:
+```
+mongorestore -d havisMongo -c observations observations.bson 
+```
+Komento kannattaa suorittaa /data/test-data-dump -hakemistossa.
 
 ### Testit
-- [lab, Node.js test framework](https://github.com/hapijs/lab)
 
-- [code, BDD Assertion library](https://github.com/hapijs/code)
-
-Suorita API-testit komennolla npm test projektin juuressa.
+Suorita API-testit komennolla *npm test* projektin juuressa.
 
 
-### Esimerkkikäyttötapauksia [Curl](https://curl.haxx.se/)-kutsuina
-
-- GET-pyyntö /observations/{year} polkuun palauttaa parametrina annetun vuoden havainnot JSON-muodossa.
-```
-curl https://havis-node.herokuapp.com/observations/2017
-```
-
-### Links
+### Linkkejä aiheeseen liittyen
 - web framework: [hapi.js](https://hapijs.com/)
 
 - validation: [joi](https://github.com/hapijs/joi)
@@ -43,6 +46,10 @@ curl https://havis-node.herokuapp.com/observations/2017
 
 - Data modeling: http://mongoosejs.com/
 
-- [Writing on GitHub, basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+- Node.js test framework: [lab](https://github.com/hapijs/lab)
 
-- https://github.com/dwyl/learn-api-design
+- Test Assertion library: [code](https://github.com/hapijs/code)
+
+- About API design: https://github.com/dwyl/learn-api-design
+
+- README writing and formatting syntax: [Writing on GitHub](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
