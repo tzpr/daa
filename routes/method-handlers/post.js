@@ -4,14 +4,18 @@
 
 const Boom = require('boom'); // https://github.com/hapijs/boom
 const Observation = require('../../data/models/observation');
+const observationModel = require('../../data/models/observation');
 
 
 module.exports.saveObservationArray = (request, reply) => {
     reply(new Promise(function(resolve, reject) {
         var observationArr = request.payload.speciesArr;
-        var obsInstanceArr = observationArr.map(newObservationInstance);
+        //var obsInstanceArr = observationArr.map(newObservationInstance);
+        observationArr.map(completeObservation);
 
-        Observation.insertMany(obsInstanceArr, (err, docs) => {
+        console.log("DAADAA: " + JSON.stringify(observationArr));
+
+        Observation.insertMany(observationArr.map(completeObservation), (err, docs) => {
             if (!err) {
                 resolve(docs);
             } else {
@@ -26,7 +30,25 @@ module.exports.saveObservationArray = (request, reply) => {
     }));
 };
 
-function newObservationInstance(observation){
+// ensure that observation has all the needed attributes
+function completeObservation(observation) {
+    if (!observation.hasOwnProperty('time')) {
+        observation.time = new Date().getTime();
+    }
+    if (!observation.hasOwnProperty('year')) {
+        observation.year = new Date().getFullYear();
+    }
+    if (!observation.hasOwnProperty('location')) {
+        observation.location = {
+            lat: "",
+            lng: "",
+            accuracy: 0
+        };
+    }
+}
+
+
+function newObservationInstance(observation) {
     return new Observation({
         species: observation.species,
         time: new Date().getTime(),

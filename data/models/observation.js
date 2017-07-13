@@ -4,7 +4,7 @@
 
 var mongoose = require('mongoose');
 
-var observationSchema = new mongoose.Schema({
+const observationModelObject = {
     species: {type: String, required: true},
     time: {type: Number, required: true, unique: true},
     count: {type: Number, required: true},
@@ -15,7 +15,9 @@ var observationSchema = new mongoose.Schema({
         lng: {type: Number},
         accuracy: {type: Number}
     }
-});
+};
+
+var observationSchema = new mongoose.Schema(observationModelObject);
 
 var Observation = mongoose.model('Observation', observationSchema);
 

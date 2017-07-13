@@ -15,7 +15,7 @@ module.exports.postObservationParams = {
 
 module.exports.postArrayOfObservationsParams = {
     payload: {
-        speciesArr: Joi.array().required()
+        speciesArr: Joi.array()//.required()
     }
 };
 
