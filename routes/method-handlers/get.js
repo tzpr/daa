@@ -81,7 +81,7 @@ module.exports.getMissingObervationsForYear = (request, reply) => {
             yearList;
 
         function yearListEmpty(list) {
-            return !yList || yList.length === 0;
+            return !list || list.length === 0;
         }
 
         function speciesDiff(eList, yList) {
